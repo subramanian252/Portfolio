@@ -9,6 +9,7 @@ import { FreeMode, Pagination } from "swiper";
 
 import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
 
 const workSlides = {
   slides: [
@@ -16,19 +17,23 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/1.png",
-        },
-        {
-          title: "title",
           path: "/2.png",
+          link: "https://wild-oasis-test.vercel.app/",
         },
         {
           title: "title",
           path: "/3.png",
+          link: "https://react-comfy-learning.netlify.app/",
         },
         {
           title: "title",
           path: "/4.jpeg",
+          link: "https://portfolio-subramanian007.vercel.app/",
+        },
+        {
+          title: "title",
+          path: "/1.png",
+          link: "https://the-wild-oasis-mauve-omega.vercel.app/",
         },
       ],
     },
@@ -48,7 +53,8 @@ const WorkSlider = () => {
         <SwiperSlide key={i}>
           <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
             {slide.images.map((image, i) => (
-              <div
+              <Link
+                href={image.link}
                 key={i}
                 className="relative rounded-lg overflow-hidden flex items-center justify-center "
               >
@@ -72,7 +78,7 @@ const WorkSlider = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </SwiperSlide>
